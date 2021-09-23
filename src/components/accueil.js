@@ -1,9 +1,9 @@
 import React from 'react'
-import './accueil.css'
+import './recherche-accueil.css'
 
 const Accueil = () => {
     return (
-        <div className="accueil">
+        <div className="r-a">
             <p>Hello Friend,</p>
             <p>
                 At its most basic a cryptocurrency is a digital asset that utilizes computer code and blockchain technology to operate
