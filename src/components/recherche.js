@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './recherche-accueil.css'
-
 import { Container, Label, Input, Button } from 'semantic-ui-react';
 
 const Recherche = () => {
@@ -10,13 +9,12 @@ const Recherche = () => {
     const [coin, setCoin] = useState({});
 
 
-    {/* recuperation des donnees dans l'API */ }
+
     const onClick = () => {
         fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${name}&vs_currencies=${currensy}`)
             .then((reponse) => reponse.json())
             .then((data) => setCoin(data))
             .catch((erreur) => console.log(erreur));
-        console.log(name);
     }
 
 
@@ -27,11 +25,10 @@ const Recherche = () => {
             <br />
             <br />
 
-
             {/* menu deroulant pour choisir la monnaie */}
             <Label pointing='right'>Currency </Label>
             <select class="ui dropdown" onClick={(e) => setCurrensy(e.target.value)}>
-                <option value="">&#128183; &#128181; &#128184;</option>
+                <option value="">&#129297; &#128184; &#128176;</option>
                 <option value="usd">United States Dollars</option>
                 <option value="cad">Canadian Dollars</option>
                 <option value="eur">Euro</option>
@@ -44,7 +41,6 @@ const Recherche = () => {
             </select>
             <br />
             <br />
-
             <Button onClick={onClick}>SEARCH</Button>
             <div class="ui black message"> {coin[name] && coin[name][currensy]}</div> {/* affichage du resultat du coin */}
             <footer>© sauveur-miguel-ernest </footer>
